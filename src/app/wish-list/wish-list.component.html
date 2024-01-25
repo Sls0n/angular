@@ -1,0 +1,22 @@
+<div *ngIf="wishes.length === 0; else showItems">
+  <p class="text-center">No wishes found. Add your first wish.</p>
+</div>
+
+<ng-template #showItems>
+  <ul class="wish-list">
+    <li *ngFor="let wish of wishes; index as i">
+      <div class="form-check">
+        <label class="form-check-label">
+          <input 
+          type="checkbox" 
+          class="checkbox"
+          [checked]="wish.isComplete"
+          [attr.data-index]="i"
+          (change)="toggleItem(wish)"
+          >
+          {{wish.wishText}}
+        </label>
+      </div>
+    </li>
+  </ul>
+</ng-template>
