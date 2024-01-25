@@ -15,8 +15,6 @@ export class AppComponent {
 
   listFilter = '0'; // like state in React
 
-  newWishText = ''; // like value in React
-
   title = 'angular';
 
   get visibleItems(): WishItem[] {
@@ -31,10 +29,7 @@ export class AppComponent {
     }
   }
 
-  addNewWish() {
-    this.items.push(new WishItem(this.newWishText));
-    this.newWishText = '';
-  }
+  
 
   
 }
